@@ -1,8 +1,11 @@
 package edu.wgu.assignments.MedPad.controllers;
 
 import edu.wgu.assignments.MedPad.Entities.Patient;
+import edu.wgu.assignments.MedPad.Substructure.PtPack;
+import edu.wgu.assignments.MedPad.Substructure.ServiceSub;
 import edu.wgu.assignments.MedPad.repository.PtRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,10 +30,20 @@ public class StaffController {
         return ptRepo.findAll();
     }
 
-    @PostMapping("/add")
-    public String addPatient(@RequestBody Patient patient) {
-        ptRepo.saveAndFlush(patient);
-        return "Patient added";
+    @PostMapping("/addPatient")
+    public HttpStatus addPatient(@RequestBody Patient patient) {
+        try{
+
+            return HttpStatus.OK;
+        } catch (Exception e) {
+            return HttpStatus.UNAUTHORIZED;
+        }
+    }
+
+    @GetMapping("/practice")
+    public List<Patient> testadds(){
+        ServiceSub.info();
+        return ptRepo.findAll();
     }
     
 }

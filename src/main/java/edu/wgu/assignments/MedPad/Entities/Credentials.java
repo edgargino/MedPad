@@ -14,7 +14,7 @@ public class Credentials {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @NonNull
     private String username;

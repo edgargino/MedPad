@@ -18,13 +18,13 @@ public class Record implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @NonNull
     private int facilityId;
 
     @NonNull
-    private Long ptId;
+    private int ptId;
 
     @NonNull
     private String chiefComplaint;

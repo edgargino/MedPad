@@ -20,7 +20,7 @@ import java.sql.Timestamp;
 public class Patient implements Serializable {
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @NonNull
     private String firstName;
@@ -38,7 +38,7 @@ public class Patient implements Serializable {
     private String email;
 
     @NonNull
-    private int phoneNumber;
+    private String phoneNumber;
 
     @CreationTimestamp
     private Timestamp createdAt;

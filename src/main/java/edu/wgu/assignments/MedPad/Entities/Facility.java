@@ -15,7 +15,7 @@ public class Facility {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     private String facilityName;
 
